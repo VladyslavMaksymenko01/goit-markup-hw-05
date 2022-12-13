@@ -130,28 +130,15 @@ ol {
   color: var(--accent-text-color);
 }
 
-.links {
-  display: inline-block;
-  position: relative;
-}
-.links:hover::after,
-.links:focus::after {
-  content: "";
-  position: absolute;
-  top: 28px;
-  left: 0px;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--accent-text-color);
-}
 .nav-links .links {
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
-  transition: var(--transition1);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-links {
   display: flex;
@@ -169,6 +156,36 @@ ol {
 .nav-links .current {
   color: var(--accent-text-color);
 }
+.links {
+  display: inline-block;
+  position: relative;
+  opacity: 1;
+}
+.links::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-text-color);
+  opacity: 0;
+  transition: opacity 250ms;
+}
+
+.links:hover::after,
+.links:focus::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-text-color);
+  opacity: 1;
+}
 
 .current::after {
   content: "";
@@ -180,12 +197,7 @@ ol {
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-text-color);
-}
-
-.current {
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
 }
 /* ________КОНТАКТИ________*/
 
@@ -199,13 +211,17 @@ ol {
 .contact-links {
   display: flex;
   align-items: center;
-  transition: var(--transition1);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-contact {
   margin-right: 10px;
   fill: currentColor;
-  transition: var(--transition1);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts .contact-links:hover {
   color: var(--accent-text-color);
@@ -278,7 +294,9 @@ ol {
   border: none;
   cursor: pointer;
 
-  transition: var(--transition2);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -336,7 +354,6 @@ ol {
 .about-img {
   position: relative;
   width: 370px;
-  min-height: ;
 }
 
 .overlay-text {
