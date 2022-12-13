@@ -25,7 +25,8 @@
   --third-bg-color: #f5f4fa;
   --forth-bg-color: #f5f5f5;
   --icons: #afb1b8;
-  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition1: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition2: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 p,
 h1,
@@ -150,6 +151,7 @@ ol {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+  transition: var(--transition1);
 }
 .nav-links {
   display: flex;
@@ -159,10 +161,6 @@ ol {
 .nav-links .links:hover,
 .nav-links .links:focus {
   color: var(--accent-text-color);
-}
-.nav-links .links:hover,
-.nav-links .links:focus {
-  transition: var(--transition);
 }
 
 .nav-links:last-child {
@@ -177,12 +175,18 @@ ol {
   position: absolute;
   top: 28px;
   left: 0px;
+  bottom: -33px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-text-color);
 }
 
+.current {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 /* ________КОНТАКТИ________*/
 
 .contacts .contact-links {
@@ -195,19 +199,19 @@ ol {
 .contact-links {
   display: flex;
   align-items: center;
+  transition: var(--transition1);
 }
 
 .icon-contact {
   margin-right: 10px;
   fill: currentColor;
+  transition: var(--transition1);
 }
 .contacts .contact-links:hover {
   color: var(--accent-text-color);
-  transition: var(--transition);
 }
 .contact-links:hover .icon-contact {
   fill: var(--accent-text-color);
-  transition: var(--transition);
 }
 .contacts {
   display: flex;
@@ -273,11 +277,12 @@ ol {
   letter-spacing: 0.06em;
   border: none;
   cursor: pointer;
+
+  transition: var(--transition2);
 }
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--btn-hover);
-  transition: var(--transition);
 }
 
 /* ________ОСОБЛИВОСТІ________*/
@@ -330,22 +335,20 @@ ol {
 }
 .about-img {
   position: relative;
-  overflow: hidden;
+  width: 370px;
+  min-height: ;
 }
-.about-img:hover .overlay-text {
-  transform: translateY(-100%);
-  transition: var(--transition);
-}
+
 .overlay-text {
   position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: auto;
   padding-top: 27px;
   padding-bottom: 27px;
   background: rgba(47, 48, 58, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -425,20 +428,24 @@ ol {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-link:hover .team-social-icons,
 .team-social-link:focus .team-social-icons {
   fill: var(--third-text-color);
-  transition: var(--transition);
 }
 .team-social-link:hover,
 .team-social-link:focus {
   background-color: var(--accent-text-color);
-  transition: var(--transition);
 }
 .team-social-icons {
   fill: var(--icons);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*________ПОСТІЙНІ КЛІЄНТИ________*/
@@ -466,21 +473,25 @@ ol {
   align-items: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover .customer-icons,
 .customer-link:focus .customer-icons {
   fill: var(--accent-text-color);
-  transition: var(--transition);
 }
 .customer-link:hover,
 .customer-link:focus {
   border-color: var(--accent-text-color);
-  transition: var(--transition);
 }
 
 .customer-icons {
   fill: var(--icons);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*________АДРЕСА________*/
@@ -543,7 +554,6 @@ ol {
 .contact-links:hover,
 .contact-links:focus {
   color: var(--accent-text-color);
-  transition: var(--transition);
 }
 .contact-links {
   display: flex;
@@ -557,6 +567,10 @@ ol {
 .footer-logo-address {
   min-width: 231px;
   margin-right: 70px;
+}
+
+.social-links {
+  margin-right: 93px;
 }
 
 .social-title {
@@ -593,20 +607,24 @@ ol {
   align-items: center;
   background-color: #ffffff1a;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: calc(0.4, 0, 0.2, 1);
 }
 
 .footer-social-link:hover .footer-social-icons,
 .footer-social-link:focus .footer-social-icons {
   fill: var(--third-text-color);
-  transition: var(--transition);
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--accent-text-color);
-  transition: var(--transition);
 }
 .footer-social-icons {
   fill: var(--third-text-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: calc(0.4, 0, 0.2, 1);
 }
 /*________ФІЛЬТР________*/
 
@@ -628,6 +646,11 @@ ol {
   color: var(--secondary-text-color);
   border: transparent;
   cursor: pointer;
+
+  transition-property: color;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: calc(0.4, 0, 0.2, 1);
 }
 .filtr-btn:hover,
 .filtr-btn:focus {
@@ -635,7 +658,6 @@ ol {
   color: var(--third-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: var(--transition);
 }
 
 /*________СПИСОК САЙТІВ ФІЛЬТР________*/
@@ -658,11 +680,14 @@ ol {
 }
 .link-hover {
   display: inline-block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: calc(0.4, 0, 0.2, 1);
 }
 .link-hover:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: var(--transition);
 }
 
 .overlay-filtr {
@@ -684,7 +709,10 @@ ol {
   color: var(--third-text-color);
   background-color: #2196f3e5;
   transform: translateY(100%);
-  transition: var(--transition);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: calc(0.4, 0, 0.2, 1);
 }
 
 .website-text {
@@ -726,37 +754,38 @@ ol {
   overflow: hidden;
 }
 
-.backdrop{
+.backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
-  transition: opacity 300ms linear, visibility 300ms linear; 
+  transition: opacity 300ms linear, visibility 300ms linear;
 }
 
-.modal{
+.modal {
   position: absolute;
   min-width: 528px;
   min-height: 581px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%), scale(1);
-  background-color: #FFFFFF; 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 300ms linear;
 }
 
-.backdrop.is-hidden .modal{
+.backdrop.is-hidden .modal {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%,-50%), scale(0);
-
+  transform: translate(-50%, -50%);
 }
-.modal-close{
+.modal-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -766,14 +795,44 @@ ol {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-.is-hidden{
+.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
+
+/* ________FOOTER_FORM______HW 6 */
+/* .footer-form-follow {
+}
+.form {
+}
+
+.form-heading {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.form-input {
+  min-width: 285px;
+  min-height: 50px;
+  padding-left: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: var(--secondary-bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+.follow-link {
+} */
